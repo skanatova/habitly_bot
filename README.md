@@ -32,9 +32,9 @@ Welcome to Habit Tracker Bot! This Telegram bot helps you track daily habits and
 
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/done` or simply send `"done"` | Mark your habits as completed for today | `/done` or `done` |
+| `/done` | Mark your habits as completed for today | `/done` or `done` |
 
-When you send the `/done` command or type "done", the bot will display an interactive list of your habits. Click on each habit to toggle its completion status:
+When you send the `/done` command, the bot will display an interactive list of your habits. Click on each habit to toggle its completion status:
 - ❌ means the habit is not completed
 - ✅ means the habit is completed
 
@@ -49,7 +49,7 @@ When you send the `/done` command or type "done", the bot will display an intera
 ## Daily Workflow
 
 1. **Complete your habits** in real life throughout the day
-2. **Report completion** by sending `done` in the chat
+2. **Report completion** by sending `/done` in the chat
 3. **Click on each habit** in the interactive menu to mark it as complete
 4. **Check the status** of others in your group with `/status`
 5. **Receive a daily summary** automatically at the end of the day

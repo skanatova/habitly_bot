@@ -438,6 +438,11 @@ public class HabitTrackerBot extends TelegramLongPollingBot {
         sendMessage(groupId, groupMessage.toString());
     }
 
+    @Scheduled(cron = "0 0 21 * * *")
+    public void runDailyReminders() {
+        sendReminders(groupId);
+    }
+
     @Transactional
     void processDailyUserReport(StringBuilder message, User user, Set<Habit> habits, LocalDate date) {
         List<String> notDoneHabits = getPendingHabits(user, date);
@@ -469,7 +474,7 @@ public class HabitTrackerBot extends TelegramLongPollingBot {
         for (Habit habit : sortedHabits(habits)) {
             InlineKeyboardButton button = new InlineKeyboardButton();
 
-            boolean shouldToggle = toggledHabitId != null && habit.getId().equals(toggledHabitId);
+            boolean shouldToggle = habit.getId().equals(toggledHabitId);
             if (shouldToggle) {
                 User user = userService.findById(userId).orElse(null);
                 if (user != null) {
